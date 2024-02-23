@@ -28,3 +28,4 @@ C:\Users\Pestanna Pedro Catum\Development\COMPLITE COURSES\TW-ToDo\obj\Debug\net
 C:\Users\Pestanna Pedro Catum\Development\COMPLITE COURSES\TW-ToDo\obj\Debug\net8.0\TW-ToDo.pdb
 C:\Users\Pestanna Pedro Catum\Development\COMPLITE COURSES\TW-ToDo\obj\Debug\net8.0\TW-ToDo.genruntimeconfig.cache
 C:\Users\Pestanna Pedro Catum\Development\COMPLITE COURSES\TW-ToDo\obj\Debug\net8.0\ref\TW-ToDo.dll
+C:\Users\Pestanna Pedro Catum\Development\COMPLITE COURSES\TW-ToDo\obj\Debug\net8.0\TW-ToDo.sourcelink.json
