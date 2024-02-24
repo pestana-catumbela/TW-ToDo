@@ -7,5 +7,5 @@ public class Todo
     public string Description { get; set; } = string.Empty;
     public DateTime CreatedAt { get; set; }
     public DateOnly Deadline { get; set; }
-    public DateOnly FinishedAt { get; set; }
+    public DateOnly? FinishedAt { get; set; }
 }
