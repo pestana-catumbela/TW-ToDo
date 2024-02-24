@@ -14,7 +14,7 @@ public class TodoController : Controller
 
     public IActionResult Index()
     {
-        var todo = _context.Todo.First();
+        var todo = _context.Todo.ToList();
         return View(todo);
     }
 }

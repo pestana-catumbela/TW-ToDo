@@ -1,9 +1,53 @@
-@model TW_ToDo.Models.Todo
+@{
+    ViewData["Title"] = "To Do List";
+}
 
-<h1>My View Controller</h1>
+@model List<TW_ToDo.Models.Todo>
 
-@Model.Id <br />
-@Model.Title <br />
-@Model.Description <br />
-@Model.CreatedAt <br />
-@Model.Deadline
+<div class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <b>
+        <a class="navbar-brand">@ViewData["Title"]</a>
+    </b>
+
+    <a class="btn btn-primary btn-sm">Add Task</a>
+  </div>
+</div>
+
+@if(Model.Count > 0)
+{
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">CreatedAt</th>
+      <th scope="col">Deadline</th>
+      <th scope="col">FinishedAt</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @foreach (var todo in Model)
+    {
+        <tr>
+            <td scope="row">@todo.Id</td>
+            <td>@todo.Title</td>
+            <td>@todo.Description</td>
+            <td>@todo.CreatedAt</td>
+            <td>@todo.Deadline</td>
+            <td>@todo.FinishedAt</td>
+            <td>
+                <a class="btn btn-success btn-sm">Done</a>
+                <a class="btn btn-warning btn-sm">Edit</a>
+                <a class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>   
+    }
+  </tbody>
+</table>
+} else {
+    <p>No tasks registered</p>
+}
