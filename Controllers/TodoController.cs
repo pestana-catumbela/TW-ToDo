@@ -21,6 +21,7 @@ public class TodoController : Controller
     public IActionResult Create()
     {
         ViewData["Title"] = "Add New Task";
+        ViewData["Text"] = "Create Task";
         return View("Form");
     }
 
@@ -36,6 +37,15 @@ public class TodoController : Controller
     {
         var todo = _context.Todo.Find(id);
         ViewData["Title"] = "Edit Task";
+        ViewData["Text"] = "Edit Task";
         return View("Form", todo);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(Todo todo)
+    {
+        _context.Todo.Update(todo);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
     }
 }
