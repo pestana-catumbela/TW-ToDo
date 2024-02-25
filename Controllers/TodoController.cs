@@ -28,6 +28,7 @@ public class TodoController : Controller
     [HttpPost]
     public IActionResult Create(Todo todo)
     {
+        todo.CreatedAt = DateTime.Now;
         _context.Todo.Add(todo);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
