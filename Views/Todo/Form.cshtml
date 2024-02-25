@@ -1,0 +1,27 @@
+@model TW_ToDo.Models.Todo
+
+<h1>@ViewData["Title"]</h1>
+
+<form method="POST">
+    <div class="mb-3">
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Deadline">Deadline</label>
+        <input asp-for="Deadline" type="date" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="FinishedAt">FinishedAt</label>
+        <input asp-for="FinishedAt" type="date" class="form-control">
+    </div>
+
+    <button class="btn btn-primary">Create</button>
+</form>
