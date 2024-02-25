@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using Microsoft.AspNetCore.Mvc;
 using TW_ToDo.Contexts;
 using TW_ToDo.Models;
@@ -46,6 +47,20 @@ public class TodoController : Controller
     public IActionResult Edit(Todo todo)
     {
         _context.Todo.Update(todo);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
+
+    public IActionResult Delete(int id)
+    {
+        var todo = _context.Todo.Find(id);
+        return View(todo);
+    }
+
+    [HttpPost]
+    public IActionResult Delete(Todo todo)
+    {
+        _context.Todo.Remove(todo);
         _context.SaveChanges();
         return RedirectToAction(nameof(Index));
     }

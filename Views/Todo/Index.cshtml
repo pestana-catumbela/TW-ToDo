@@ -41,8 +41,8 @@
               <td>@todo.FinishedAt</td>
               <td>
                   <a class="btn btn-success btn-sm">Done</a>
-                  <a class="btn btn-warning btn-sm" asp-controller="Todo" asp-action="Edit">Edit</a>
-                  <a class="btn btn-danger btn-sm">Delete</a>
+                  <a class="btn btn-warning btn-sm" asp-controller="Todo" asp-action="Edit" asp-route-id="@todo.Id">Edit</a>
+                  <a class="btn btn-danger btn-sm" asp-controller="Todo" asp-action="Delete" asp-route-id="@todo.Id">Delete</a>
               </td>
           </tr>   
       }

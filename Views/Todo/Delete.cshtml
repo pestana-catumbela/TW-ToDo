@@ -1,0 +1,18 @@
+@model TW_ToDo.Models.Todo
+
+@{
+    ViewData["Title"] = "Delete Task";
+}
+
+<div>
+    <p>Do you want to delete this task?</p>
+
+    <span>Id: <b>@Model.Id</b></<span></br>
+    <span>Title: <b>@Model.Title</b></<span>
+    <p></p>
+</div>
+
+<form method="POST">
+    <button class="btn btn-danger" type="submit">Delete</button>
+    <a class="btn btn-primary" asp-controller="Todo" asp-action="Index">Cancel</a>
+</form>
