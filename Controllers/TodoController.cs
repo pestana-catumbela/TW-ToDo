@@ -17,4 +17,25 @@ public class TodoController : Controller
         var todo = _context.Todo.ToList();
         return View(todo);
     }
+
+    public IActionResult Create()
+    {
+        ViewData["Title"] = "Add New Task";
+        return View("Form");
+    }
+
+    [HttpPost]
+    public IActionResult Create(Todo todo)
+    {
+        _context.Todo.Add(todo);
+        _context.SaveChanges();
+        return RedirectToAction(nameof(Index));
+    }
+
+    public IActionResult Edit(int id)
+    {
+        var todo = _context.Todo.Find(id);
+        ViewData["Title"] = "Edit Task";
+        return View("Form", todo);
+    }
 }

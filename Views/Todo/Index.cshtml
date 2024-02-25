@@ -10,7 +10,7 @@
         <a class="navbar-brand">@ViewData["Title"]</a>
     </b>
 
-    <a class="btn btn-primary btn-sm">Add Task</a>
+    <a class="btn btn-primary btn-sm" asp-controller="Todo" asp-action="Create">Add Task</a>
   </div>
 </div>
 
@@ -41,7 +41,7 @@
             <td>@todo.FinishedAt</td>
             <td>
                 <a class="btn btn-success btn-sm">Done</a>
-                <a class="btn btn-warning btn-sm">Edit</a>
+                <a class="btn btn-warning btn-sm" asp-controller="Todo" asp-action="Edit">Edit</a>
                 <a class="btn btn-danger btn-sm">Delete</a>
             </td>
         </tr>   
